@@ -1,0 +1,48 @@
+<div class="d-flex justify-content-center mt-3">
+    <form action="" autocomplete="off">
+        <div>
+            <div class="display-6 ">
+                <!-- interpolacion - one binding: atributos en una sola dirección  -->
+                {{
+                    labelLogin 
+                }}
+            </div>
+            <br>
+            <div>
+                <!-- area de usuario -->
+                 <div>
+                     <div>
+                         <label for="emailusuario">Usuario</label>
+                     </div>
+                     <div>
+                        <!-- ngModel es un mecanimo de 2 direcciones que se asocia a un atributo que se puede modificar y se 
+                         ve afectado en la presentacion del HTML y en el component.ts (parte lógica)  -->
+                        <input class="form-control" [(ngModel)]="emailusuario" type="email" name="emailusuario" id="emailusuarioid" placeholder="Ingrese su email">
+                     </div>
+                     <div>
+                        <label for="contraseniapassword">Contrase&ntilde;a</label>
+                     </div>
+                     <div>
+                        <input 
+                        class="form-control"
+                        [(ngModel)]="passwordusuario" type="password" 
+                        placeholder="Ingrese su contrase&ntilde;a"
+                        name="contraseniapassword" id="contraseniapasswordid">
+                     </div>
+                 </div>
+                 <br>
+                 <div>
+                    <div>
+                        <!-- (clic): event binding - event one binding - Eventos en una sola direccion -->
+                        <input class="btn btn-primary" type="button" value="Iniciar sesi&oacute;n" (click)="login()">
+                    </div>
+                    <br>
+                    <div>
+                        <!--a href="#" (click)="eventoCambioPantalla()"> Registrarse</a-->
+                        <input class="btn btn-outline-primary m2 " type="button" value="Registrarse" (click)="eventoCambioPantalla()">
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </form>
+</div>

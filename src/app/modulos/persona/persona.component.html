@@ -1,0 +1,32 @@
+<div>
+    <app-modal-persona (eventoGuardar)="guardarPersona($event)"></app-modal-persona>
+</div>
+
+<table
+ class="table">
+    <thead>
+        <th>Id</th>
+        <th>Identificacion</th>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Edad</th>
+        <th>Email</th>
+        <th>Celular</th>        
+        <th>Opciones</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let persona of dataPersonas">
+        <td> {{ persona.id }} </td>
+        <td> {{ persona.identificacion }} </td>
+        <td> {{ persona.nombres }} </td>
+        <td> {{ persona.apellidos }} </td>
+        <td> {{ persona.edad }} </td>
+        <td> {{ persona.email }} </td>
+        <td> {{ persona.celular }} </td>               
+        <td>
+            <!-- <app-botones-tabla [labelBtn1]="'Actualizar'" [labelBtn2]="'Quitar'" (eventoBtn1)="funcionPersona($event)" (eventoBtn2)="funcionEliminar($event)" [dataRegistro]="persona"></app-botones-tabla> -->
+             <app-modal-persona [dataPersona]="persona" [modalid]="'modalpersona'+persona.id"></app-modal-persona>
+        </td>
+        </tr>
+    </tbody>
+</table>
