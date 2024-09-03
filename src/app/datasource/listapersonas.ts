@@ -7,6 +7,7 @@ export const lpersonas = [
         "apellidos": "Bacor",
         "edad":12,
         "email": "xxxx@gmail.com",
+        "password": "123456.",
         "celular": "9999999999"
     },
     {
@@ -16,6 +17,7 @@ export const lpersonas = [
         "apellidos": "Mejia",
         "edad":14,
         "email": "xxx1@gmail.com",
+        "password": "123456.",
         "celular": "9999999992"
     }
 ];

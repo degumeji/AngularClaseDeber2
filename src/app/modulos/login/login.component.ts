@@ -9,17 +9,15 @@ export class LoginComponent {
   constructor(){
   }
 
-
   @Output()
-  banderaAutenticacion = new EventEmitter<string>();
+  banderaAutenticacion = new EventEmitter<string>();  
 
   @Output() loginEvent = new EventEmitter();
 
-  @Input()
-  valorData?: string;
+  @Input() valorData?: string;
 
   labelLogin: string = 'LOGIN';
-  emailusuario: string = ''; // two way binging
+  emailusuario: string = '';
   passwordusuario: string = '';
 
   mostrarNombre() {

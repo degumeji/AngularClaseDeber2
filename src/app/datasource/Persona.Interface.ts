@@ -5,5 +5,6 @@ export interface Persona {
     apellidos: string,
     edad: number,
     email: string,
+    password: string,
     celular: string
 }

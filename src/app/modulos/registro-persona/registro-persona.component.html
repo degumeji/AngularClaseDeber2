@@ -1,88 +1,113 @@
 <div class="d-flex justify-content-center mt-3">
-    <form action="" autocomplete="off">
-        <div>
-            <div class="display-6">
-                Registro de usuario
-            </div>
-            <br>
-            <div>
-                <div>
-                    <div>
-                        <label for="">Primer nombre</label>
-                    </div>
-                    <div>
-                        <input class="form-control" type="text" placeholder="Ingrese su primer nombre" name="primernombre" id="primernombreid">
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <label for="">Segundo nombre</label>
-                    </div>
-                    <div>
-                        <input class="form-control" type="text" placeholder="Ingrese su segundo nombre" name="segundonombre" id="segundonombreid">
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <label for="primerapellido">Primer apellido</label>
-                    </div>
-                    <div>
-                        <input class="form-control" type="text" placeholder="Ingrese su primer apellido" name="primerapellido" id="primerapellidoid">
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <label for="segundoapellido">Segundo apellido</label>
-                    </div>
-                    <div>
-                        <input class="form-control" type="text" placeholder="Ingrese su segundo apellido" name="segundoapellido" id="segundoapellidoid">
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <label for="correo">Correo</label>
-                    </div>
-                    <div>
-                        <input class="form-control" type="email" placeholder="Ingrese su correo" name="correo" id="correoid">
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <label for="telefono">Tel&eacute;fono</label>
-                    </div>
-                    <div>
-                        <input class="form-control" type="email" placeholder="Ingrese su tel&eacute;fono" name="telefono" id="telefonoid">
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <label for="contrasenia">Contrase&ntilde;a</label>
-                    </div>
-                    <div>
-                        <input class="form-control" type="password" placeholder="Ingrese su contrasenia" name="contrasenia" id="contraseniaid">
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <label for="confirmaContrasenia">Confirmar Contrase&ntilde;a</label>
-                    </div>
-                    <div>
-                        <input class="form-control" type="password" placeholder="Confirme su Contrase&ntilde;a" name="confirmaContrasenia" id="confirmaContraseniaid">
-                    </div>
-                </div>
-                <br>
-                 <div>
-                    <div>
-                        <input class="btn btn-primary" type="button" value="Completar registro">
-                    </div>
-                    <br>
-                    <div>
-                        <!--a href="#" (click)="volverInicio()"> Volver a inicio de sesi&oacute;n</a-->
-                        <!--a [routerLink]="'registro'"> Volver a inicio de sesi&oacute;n</a-->
-                        <input (click)="volverInicio()" class="btn btn-outline-primary m2" type="button" value="Volver a inicio de sesi&oacute;n"/>
-                    </div>
-                 </div>
-            </div>
+  <form action="" autocomplete="off">
+    <div>
+      <div class="display-6">Registro de usuario</div>
+      <br />
+      <div id="divMensaje"></div>
+      <br />
+      <form method="post">
+        <div class="mb-3">
+          <label for="recipient-identificacion" class="col-form-label"
+            >Identificacion:</label
+          >
+          <input
+            name="recipient-identificacion"
+            type="text"
+            [(ngModel)]="dataPersona.identificacion"
+            class="form-control"
+            id="recipient-identificacion"
+            required
+          />
         </div>
-    </form>
+        <div class="mb-3">
+          <label for="recipient-name" class="col-form-label">Nombres:</label>
+          <input
+            type="text"
+            name="recipient-name"
+            [(ngModel)]="dataPersona.nombres"
+            class="form-control"
+            id="recipient-name"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="recipient-lastname" class="col-form-label"
+            >Apellidos:</label
+          >
+          <input
+            name="recipient-lastname"
+            type="text"
+            [(ngModel)]="dataPersona.apellidos"
+            class="form-control"
+            id="recipient-lastname"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="recipient-edad" class="col-form-label">Edad:</label>
+          <input
+            name="recipient-edad"
+            type="text"
+            [(ngModel)]="dataPersona.edad"
+            class="form-control"
+            id="recipient-edad"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="recipient-phone" class="col-form-label">Celular:</label>
+          <input
+            name="recipient-phone"
+            type="text"
+            [(ngModel)]="dataPersona.celular"
+            class="form-control"
+            id="recipient-phone"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="recipient-email" class="col-form-label">Email:</label>
+          <input
+            name="recipient-email"
+            type="text"
+            [(ngModel)]="dataPersona.email"
+            class="form-control"
+            id="recipient-email"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="recipient-password" class="col-form-label"
+            >Password:</label
+          >
+          <input
+            name="recipient-password"
+            type="password"
+            [(ngModel)]="dataPersona.password"
+            class="form-control"
+            id="recipient-password"
+            required
+          />
+        </div>
+        <div class="mb-3">
+            <input
+            type="button"
+            id="btnGuardar"
+            class="btn btn-primary"
+            value="Guardar"
+            style="width: 100%;"
+            (click)="guardar(dataPersona)"
+          />
+          <br><br>
+          <input
+            (click)="volverInicio()"
+            class="btn btn-outline-primary"
+            type="button"
+            style="width: 100%;"
+            value="Volver a inicio de sesi&oacute;n"
+          />                    
+        </div>
+      </form>
+    </div>
+  </form>
 </div>

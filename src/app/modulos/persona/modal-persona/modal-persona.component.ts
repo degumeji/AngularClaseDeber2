@@ -21,34 +21,25 @@ export class ModalPersonaComponent {
     apellidos: '',
     edad: 0,
     celular: '',
-    email: ''
+    email: '',
+    password: ''
   };
-
+  
   @Output() eventoGuardar = new EventEmitter<Persona>();
 
-  //@ViewChild(`${this!.modalid}`, {static : true}) divModal!: Modal;
-
-
   guardar() {
-    // if (!this.validarGuardar()) {
-    this.eventoGuardar.emit(this.dataPersona);
-    this.cerrarModal();
-    //  }
+    if (!this.validarGuardar()) {
+      this.eventoGuardar.emit(this.dataPersona);
+      this.cerrarModal();
+    }
   }
 
   validarGuardar(): boolean {
-    if (this.validarEstaVacio(this.dataPersona.nombres)) {
-      this.mostrarMensajeError("El valor de nombre no se ha agregado");
+    if (this.validarEstaVacio(this.dataPersona.celular)) {
+      this.mostrarMensajeError("El valor de celular no se ha agregado");
       return true;
     }
-
-    if (this.validarEstaVacio(this.dataPersona.apellidos)) {
-      this.mostrarMensajeError("El valor de apellidos no se ha agregado");
-      return true;
-    }
-
     return false;
-
   }
 
   cerrarModal() {

@@ -31,9 +31,13 @@
             <input name="recipient-phone" type="text" [(ngModel)]="dataPersona.celular" class="form-control" id="recipient-phone" required>
           </div>
           <div class="mb-3">
-            <label for="recipient-city" class="col-form-label">Email:</label>
-            <input name="recipient-city" type="text" [(ngModel)]="dataPersona.email" class="form-control" id="recipient-city" required>
-          </div>          
+            <label for="recipient-email" class="col-form-label">Email:</label>
+            <input name="recipient-email" type="text" [(ngModel)]="dataPersona.email" class="form-control" id="recipient-email" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-password" class="col-form-label">Password:</label>
+            <input name="recipient-password" type="password" [(ngModel)]="dataPersona.password" class="form-control" id="recipient-password" required>
+          </div>
           <div class="modal-footer">
             <input type="button" id="btnCerrarModal" class="btn btn-secondary" value="Cerrar" data-bs-dismiss="modal">
             <input type="button" id="btnGuardar" class="btn btn-primary" value="Guardar" (click)="guardar()">

@@ -9,6 +9,10 @@ import { ModalPersonaComponent } from './modulos/persona/modal-persona/modal-per
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegistroPersonaComponent } from './modulos/registro-persona/registro-persona.component';
+import { stockPipe } from './shared/pipes/stockpipe.pipe';
+import { HeaderComponent } from './shared/header/header.component';
+import { HomeComponent } from './modulos/home/home.component';
+import { NotfoundComponent } from './modulos/general/notfound/notfound.component';
 
 
 
@@ -19,7 +23,11 @@ import { RegistroPersonaComponent } from './modulos/registro-persona/registro-pe
     AutenticacionComponent,
     PersonaComponent,
     ModalPersonaComponent,
-    RegistroPersonaComponent
+    RegistroPersonaComponent,
+    stockPipe,
+    HeaderComponent,
+    HomeComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
