@@ -24,13 +24,13 @@ export class ModalPersonaComponent {
     email: '',
     password: ''
   };
-  
+
   @Output() eventoGuardar = new EventEmitter<Persona>();
 
   guardar() {
     if (!this.validarGuardar()) {
       this.eventoGuardar.emit(this.dataPersona);
-      this.cerrarModal();
+      //this.cerrarModal();
     }
   }
 
@@ -47,6 +47,25 @@ export class ModalPersonaComponent {
     if (btnCerrar) {
       btnCerrar?.click();
     }
+  }
+
+  cerrarModalAlaFuerza() {
+    document.getElementById(this.modalid)!.style.display = "none";
+    document.getElementById(this.modalid)!.classList.remove("show");
+    document.getElementById(this.modalid)!.setAttribute("aria-hidden", "true");
+    document.getElementById(this.modalid)!.removeAttribute("aria-modal");
+    document.getElementById(this.modalid)!.removeAttribute("role");
+
+    document.body.classList.remove('modal-open');
+    document.body.style.removeProperty('overflow');
+    document.body.style.removeProperty('padding-right');
+
+    var elements = document.getElementsByClassName("modal-backdrop");
+    while (elements.length > 0) {
+      elements[0].parentNode?.removeChild(elements[0]);
+    }
+
+    document.getElementById(this.modalid)!.click();
   }
 
   validarEstaVacio(value: any) {
